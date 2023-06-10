@@ -1,0 +1,11 @@
+<div class="search">
+  <form class="form">
+    <mat-form-field class="field">
+      <input [(ngModel)]="newCity" matInput placeholder="Enter a city name" name="newCity">
+      <button mat-raised-button color="primary" (click)="addCity()">Add</button>
+      <button mat-raised-button color="primary" (click)="addUsaStateCapitals()">All USA State Capitals</button>
+    </mat-form-field>
+  </form>
+</div>
+
+<forecast-list [cities]="cities"></forecast-list>

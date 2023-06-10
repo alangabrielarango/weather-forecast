@@ -1,0 +1,20 @@
+input {
+    width: 500px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-family:'Arial';
+    font-size: medium;
+    text-align: right;
+}
+
+button {
+    border-radius: 2px;
+    font-size: medium;
+    color: white;
+    margin-left: 5px;
+}
+
+.form, .field {
+    width: 100%;
+    text-align: right;
+}

@@ -1,0 +1,174 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    border-radius: 20px;
+    background-color: #8dd6f8;
+    box-shadow: 3px 3px 6px #4c4d4e;
+    color: #000;
+    font-family:'Arial';
+    padding: 10px;
+    margin: 10px;
+    flex: 0 0 40%;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+.remove {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        border-radius: 5px;
+        margin-right: 5px;
+        font-weight: bold;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+}
+
+.header {
+    display: flex;
+
+    div {
+        flex: 0 0 50%;
+        box-sizing: border-box;
+
+        p {
+            margin: 0px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 45px;
+        }
+
+        .current-temperature {
+            font-size: 30px;
+            padding-left: 10px;
+        }
+    }
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+
+    img {
+        max-width: 30%;
+        height: auto;
+        object-fit: cover;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    span {
+        margin-left: 5px;
+    }
+}
+
+.good {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+.moderate {
+    background-color: yellowgreen;
+    color: black;
+    text-align: center;
+}
+
+.sensitive {
+    background-color: yellow;
+    color: black;
+    text-align: center;
+}
+
+.unhealthy {
+    background-color: orangered;
+    color: white;
+    text-align: center;
+}
+
+.very-unhealthy {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.hazardous {
+    background-color: darkred;
+    color: white;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    border: none;
+}
+
+.grid-cell {
+    font-size: 12px;
+    text-align: right;
+    border: 1px solid #000;
+}
+
+.temp-cell span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-icon {
+    width: 10px;
+    height: 10px;
+    object-fit: cover;  
+}
+
+.day-cell {
+    background-color: white;
+    span {
+        margin-left: 5px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+
+.center {
+    padding-top: 8px;
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+    .grid-container {
+        display: none;
+    }
+    .current-temperature {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .header {
+        display: block;
+        .current-temperature {
+            font-size: 15px;
+        }
+    }
+}

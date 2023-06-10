@@ -1,0 +1,38 @@
+<div class="list">
+    <div *ngFor="let city of cities" class="item">
+        <div class="remove">
+            <button (click)="removeCity(city)">X</button>
+        </div>
+        <div class="header">
+            <div>
+                <h2>{{ city.city_name }}</h2>
+                <p>Latitude: {{ city.latitude }}</p>
+                <p>Longitude: {{ city.longitude }}</p>
+                <p class="center bold" *ngIf="city.current.aqi_description">Air Quality Index</p>
+                <p [class]="city.current.aqi_color">{{ city.current.aqi_description }}</p>
+            </div>
+            <div>
+                <div class="icon">
+                    <img [src]="city.current.imageUrl" [alt]="city.current.weathercode_description" [matTooltip]="city.current.weathercode_description"/>
+                    <span class="current-temperature">{{ city.current.temperature }}°</span>
+                </div>
+                <p>{{ city.current.weathercode_description }}</p>
+                <p>L:{{ city.current.temperature_min }}° H:{{ city.current.temperature_max }}° </p>
+                <div class="grid-container">
+                    <ng-container *ngFor="let day of city.daily | keyvalue; let first = first">
+                        <div *ngIf="!first" class="grid-cell day-cell">
+                            <img class="small-icon" [src]="day.value.imageUrl" />
+                            <span>{{ day.value.day_name }}</span>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngFor="let day of city.daily | keyvalue; let first = first">
+                        <div *ngIf="!first" class="grid-cell temp-cell">
+                            <p class="right">L:{{ day.value.temperature_min }}°</p>
+                            <p class="right">H:{{ day.value.temperature_max }}°</p>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
