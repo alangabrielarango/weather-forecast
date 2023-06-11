@@ -7,7 +7,7 @@ import { Coordinate } from './common';
   providedIn: 'root'
 })
 export class GeocodingService {
-  private apiKey = 'AIzaSyDxEy2RXXn77vh8g6vXS8xrpJJSjuPrEjA';
+  private apiKey = '';
 
   constructor(private http: HttpClient) {}
 
